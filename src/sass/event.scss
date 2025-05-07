@@ -1,14 +1,15 @@
-@import './variables';
+@use "sass:color";
+@use 'variables';
 
 .rbc-event {
   border: none;
   box-sizing: border-box;
   box-shadow: none;
   margin: 0;
-  padding: $event-padding;
-  background-color: $event-bg;
-  border-radius: $event-border-radius;
-  color: $event-color;
+  padding: variables.$event-padding;
+  background-color: variables.$event-bg;
+  border-radius: variables.$event-border-radius;
+  color: variables.$event-color;
   cursor: pointer;
   width: 100%;
   text-align: left;
@@ -19,11 +20,11 @@
   }
 
   &.rbc-selected {
-    background-color: darken($event-bg, 10%);
+    background-color: color.adjust(variables.$event-bg, $lightness: -10%);
   }
 
   &:focus {
-    outline: 5px auto $event-outline;
+    outline: 5px auto variables.$event-outline;
   }
 }
 
